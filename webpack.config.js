@@ -46,7 +46,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: './src/App.tsx',
+  devtool: 'inline-source-map',
 
   plugins: [
     new webpack.ProgressPlugin(),
@@ -59,7 +60,8 @@ module.exports = {
       loader: 'ts-loader',
       include: [path.resolve(__dirname, 'src')],
       exclude: [/node_modules/]
-    }, {
+    },
+    {
       test: /.(scss|css)$/,
 
       use: [{
@@ -85,7 +87,10 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
-
+  output:{
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
   optimization: {
     minimizer: [new TerserPlugin()],
 

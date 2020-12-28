@@ -10,13 +10,15 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "allowJs": true,
-    "moduleResolution": "classic",
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false
   },
   "include": [
     "./src/**/**/*"
   ],
   "files": [
-    "src/index.ts"
+    "src/index.ts", "src/demo.ts", "src/test.ts", "src/App.tsx",  "src/CarItem.tsx"
   ]
 }
